@@ -1,0 +1,288 @@
+﻿  ANDROID_HOME=F:\Android\AndroidSdk
+  ANT_HOME=F:\Program Files (x86)\Microsoft Visual Studio 2019\Apps\apache-ant-1.9.3
+  JAVA_HOME=C:\Program Files\Eclipse Foundation\jdk-8.0.302.8-hotspot
+  NDK_ROOT=F:\Microsoft\AndroidNDK\android-ndk-r16b
+  CHook.cpp
+..\..\GTA Android Plugin\ARMHook\CHook.cpp(329,46): warning : '&' within '|' [-Wbitwise-op-parentheses]
+          uint16_t hex = (offset & 0xFFF) >> 1 & 0xFF | n; //& 0xFFF go forward jump, clear sign bit
+                         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~ ~
+  ..\..\GTA Android Plugin\ARMHook\CHook.cpp(329,46):  note: place parentheses around the '&' expression to silence this warning
+          uint16_t hex = (offset & 0xFFF) >> 1 & 0xFF | n; //& 0xFFF go forward jump, clear sign bit
+                                               ^
+                         (                           )
+..\..\GTA Android Plugin\ARMHook\CHook.cpp(343,46): warning : '&' within '|' [-Wbitwise-op-parentheses]
+          uint16_t hex = (offset & 0xFFF) << 2 & 0xFF | reg | n;
+                         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~ ~
+  ..\..\GTA Android Plugin\ARMHook\CHook.cpp(343,46):  note: place parentheses around the '&' expression to silence this warning
+          uint16_t hex = (offset & 0xFFF) << 2 & 0xFF | reg | n;
+                                               ^
+                         (                           )
+..\..\GTA Android Plugin\ARMHook\CHook.cpp(351,48): warning : '&' within '|' [-Wbitwise-op-parentheses]
+          uint32_t hex = ((func - addr - 8) / 4) & 0xFFFFFF | 0xEB000000; //offset = func - PC   PC = addr + 8  (/ 4 = align)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~ ~
+  ..\..\GTA Android Plugin\ARMHook\CHook.cpp(351,48):  note: place parentheses around the '&' expression to silence this warning
+          uint32_t hex = ((func - addr - 8) / 4) & 0xFFFFFF | 0xEB000000; //offset = func - PC   PC = addr + 8  (/ 4 = align)
+                                                 ^
+                         (                                 )
+..\..\GTA Android Plugin\ARMHook\CHook.cpp(357,49): warning : '&' within '|' [-Wbitwise-op-parentheses]
+          uint32_t hex = ((targe - addr - 8) / 4) & 0xFFFFFF | 0xEA000000; //offset = func - PC   PC = addr + 8  (/ 4 = align)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~ ~
+  ..\..\GTA Android Plugin\ARMHook\CHook.cpp(357,49):  note: place parentheses around the '&' expression to silence this warning
+          uint32_t hex = ((targe - addr - 8) / 4) & 0xFFFFFF | 0xEA000000; //offset = func - PC   PC = addr + 8  (/ 4 = align)
+                                                  ^
+                         (                                  )
+..\..\GTA Android Plugin\ARMHook\CHook.cpp(399,49): warning : '&' within '|' [-Wbitwise-op-parentheses]
+          uint32_t hex = ((targe - addr - 8) / 4) & 0xFFFFFF | n; //offset = func - PC   PC = addr + 8  (/ 4 = align)
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~ ~
+  ..\..\GTA Android Plugin\ARMHook\CHook.cpp(399,49):  note: place parentheses around the '&' expression to silence this warning
+          uint32_t hex = ((targe - addr - 8) / 4) & 0xFFFFFF | n; //offset = func - PC   PC = addr + 8  (/ 4 = align)
+                                                  ^
+                         (                                  )
+..\..\GTA Android Plugin\ARMHook\CHook.cpp(533,55): warning : '&&' within '||' [-Wlogical-op-parentheses]
+          else if (((code & 0x0FFFFFFFu) == 0x012FFF1F) && ((code & 0xF0000000) != 0xF0000000) || ((code & 0x0FFFFFFFu) == 0x012FFF1E))
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ~~
+  ..\..\GTA Android Plugin\ARMHook\CHook.cpp(533,55):  note: place parentheses around the '&&' expression to silence this warning
+          else if (((code & 0x0FFFFFFFu) == 0x012FFF1F) && ((code & 0xF0000000) != 0xF0000000) || ((code & 0x0FFFFFFFu) == 0x012FFF1E))
+                                                        ^
+                   (                                                                          )
+..\..\GTA Android Plugin\ARMHook\CHook.cpp(634,5): warning : '/*' within block comment [-Wcomment]
+      /*
+      ^
+..\..\GTA Android Plugin\ARMHook\CHook.cpp(681,10): warning : '/*' within block comment [-Wcomment]
+          //*(uint32_t*)&code[4] = (func | 1);
+           ^
+  8 warnings generated.
+  CPatch.cpp
+  SubstrateDebug.cpp
+  SubstrateHook.cpp
+..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp(132,100): warning : '&&' within '||' [-Wlogical-op-parentheses]
+      return (ic[0] & 0xf800) == 0xf000 && ((ic[1] & 0xd000) == 0x9000 || (ic[1] & 0xd000) == 0x8000 && (ic[0] & 0x0380) != 0x0380);
+                                                                       ~~ ~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp(132,100):  note: place parentheses around the '&&' expression to silence this warning
+      return (ic[0] & 0xf800) == 0xf000 && ((ic[1] & 0xd000) == 0x9000 || (ic[1] & 0xd000) == 0x8000 && (ic[0] & 0x0380) != 0x0380);
+                                                                                                     ^
+                                                                          (                                                       )
+..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp(471,31): warning : taking the absolute value of unsigned type 'unsigned int' has no effect [-Wabsolute-value]
+              buffer[start+1] = T2$ldr_rt_$rn_im$(exts.rt, A$pc, T$Label(start+0, end-2));
+                                ^
+  ..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp(101,21):  note: expanded from macro 'T2$ldr_rt_$rn_im$'
+      (((rt) << 12) | labs(im))
+                      ^
+  ..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp(471,31):  note: remove the call to 'labs' since unsigned values cannot be negative
+  ..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp(101,21):  note: expanded from macro 'T2$ldr_rt_$rn_im$'
+      (((rt) << 12) | labs(im))
+                      ^
+..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp(655,31): warning : taking the absolute value of unsigned type 'unsigned int' has no effect [-Wabsolute-value]
+              buffer[start+0] = A$ldr_rd_$rn_im$(copy.rn, A$pc, (end-1 - (start+0)) * 4 - 8);
+                                ^
+  ..\..\GTA Android Plugin\ARMHook\Substrate/SubstrateARM.hpp(49,76):  note: expanded from macro 'A$ldr_rd_$rn_im$'
+      (0xe5100000 | ((im) < 0 ? 0 : 1 << 23) | ((rn) << 16) | ((rd) << 12) | labs(im))
+                                                                             ^
+  ..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp(655,31):  note: remove the call to 'labs' since unsigned values cannot be negative
+  ..\..\GTA Android Plugin\ARMHook\Substrate/SubstrateARM.hpp(49,76):  note: expanded from macro 'A$ldr_rd_$rn_im$'
+      (0xe5100000 | ((im) < 0 ? 0 : 1 << 23) | ((rn) << 16) | ((rd) << 12) | labs(im))
+                                                                             ^
+  3 warnings generated.
+  SubstratePosixMemory.cpp
+  CAnimManager.cpp
+  In file included from ..\..\GTA Android Plugin\GTASA\CAnimManager.cpp:1:
+  In file included from H:\新建文件夹1\GTA Android Plugin\library.h:6:
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(12,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(18,32): warning : calling convention '__fastcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__fastcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(24,32): warning : calling convention '__stdcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__stdcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(30,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(36,32): warning : calling convention '__thiscall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__thiscall*)(C, Args...)>(address_)(_this, args...);
+                                                      ^
+  5 warnings generated.
+  CStreaming.cpp
+  In file included from ..\..\GTA Android Plugin\GTASA\CStreaming.cpp:1:
+  In file included from H:\新建文件夹1\GTA Android Plugin\library.h:6:
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(12,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(18,32): warning : calling convention '__fastcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__fastcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(24,32): warning : calling convention '__stdcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__stdcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(30,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(36,32): warning : calling convention '__thiscall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__thiscall*)(C, Args...)>(address_)(_this, args...);
+                                                      ^
+  In file included from ..\..\GTA Android Plugin\GTASA\CStreaming.cpp:2:
+  In file included from ..\..\GTA Android Plugin\GTASA/CStreaming.h:2:
+..\..\GTA Android Plugin\GTASA/CStreamingInfo.h(22,8): warning : private field '__pad' is not used [-Wunused-private-field]
+          char  __pad[3];
+                ^
+  6 warnings generated.
+  CTimer.cpp
+  In file included from ..\..\GTA Android Plugin\GTASA\CTimer.cpp:1:
+  In file included from H:\新建文件夹1\GTA Android Plugin\library.h:6:
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(12,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(18,32): warning : calling convention '__fastcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__fastcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(24,32): warning : calling convention '__stdcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__stdcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(30,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(36,32): warning : calling convention '__thiscall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__thiscall*)(C, Args...)>(address_)(_this, args...);
+                                                      ^
+  5 warnings generated.
+  library.cpp
+  In file included from ..\..\GTA Android Plugin\library.cpp:1:
+  In file included from H:\新建文件夹1\GTA Android Plugin/library.h:6:
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(12,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(18,32): warning : calling convention '__fastcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__fastcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(24,32): warning : calling convention '__stdcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__stdcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(30,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(36,32): warning : calling convention '__thiscall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__thiscall*)(C, Args...)>(address_)(_this, args...);
+                                                      ^
+..\..\GTA Android Plugin\library.cpp(5,28): warning : implicit conversion of NULL constant to 'uintptr_t' (aka 'unsigned int') [-Wnull-conversion]
+  uintptr_t library::pGame = NULL;
+                     ~~~~~   ^~~~
+                             0
+  6 warnings generated.
+  inireader.c
+  minIni.c
+  SAMImprovedStreaming.cpp
+  In file included from SAMImprovedStreaming.cpp:1:
+  In file included from H:\新建文件夹1\GTA Android Plugin\library.h:6:
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(12,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(18,32): warning : calling convention '__fastcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__fastcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(24,32): warning : calling convention '__stdcall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__stdcall*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(30,32): warning : calling convention '__cdecl' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__cdecl*)(Args...)>(address_)(args...);
+                                                      ^
+H:\新建文件夹1\GTA Android Plugin/ARMHook/Call.h(36,32): warning : calling convention '__thiscall' ignored for this target [-Wignored-attributes]
+                          return reinterpret_cast<Ret(__thiscall*)(C, Args...)>(address_)(_this, args...);
+                                                      ^
+  In file included from SAMImprovedStreaming.cpp:2:
+H:\新建文件夹1\GTA Android Plugin\shared/AML/amlmod.h(17,13): warning : 'EXPORT' macro redefined [-Wmacro-redefined]
+      #define EXPORT __attribute__((visibility("default")))
+              ^
+  H:\新建文件夹1\GTA Android Plugin/shared.h(21,9):  note: previous definition is here
+  #define EXPORT __attribute__ ((visibility ("default")))
+          ^
+SAMImprovedStreaming.cpp(119,46): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                  streamMemoryForced = inireader.ReadInteger("Settings", "StreamMemoryForced", 0);
+                                                             ^
+SAMImprovedStreaming.cpp(119,58): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                  streamMemoryForced = inireader.ReadInteger("Settings", "StreamMemoryForced", 0);
+                                                                         ^
+SAMImprovedStreaming.cpp(131,49): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                  removeUnusedWhenPercent = inireader.ReadFloat("Settings", "RemoveUnusedWhenPercent", 0.0f);
+                                                                ^
+SAMImprovedStreaming.cpp(131,61): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                  removeUnusedWhenPercent = inireader.ReadFloat("Settings", "RemoveUnusedWhenPercent", 0.0f);
+                                                                            ^
+SAMImprovedStreaming.cpp(132,50): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                  removeUnusedIntervalMs = inireader.ReadInteger("Settings", "RemoveUnusedInterval", 60);
+                                                                 ^
+SAMImprovedStreaming.cpp(132,62): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                  removeUnusedIntervalMs = inireader.ReadInteger("Settings", "RemoveUnusedInterval", 60);
+                                                                             ^
+SAMImprovedStreaming.cpp(192,51): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          loadEach = inireader.ReadInteger(range.data(), "LoadEach", 0);
+                                                                         ^
+SAMImprovedStreaming.cpp(193,50): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          startId = inireader.ReadInteger(range.data(), "Start", -1);
+                                                                        ^
+SAMImprovedStreaming.cpp(194,48): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          endId = inireader.ReadInteger(range.data(), "End", -1);
+                                                                      ^
+SAMImprovedStreaming.cpp(195,54): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          ignoreStart = inireader.ReadInteger(range.data(), "IgnoreStart", -1);
+                                                                            ^
+SAMImprovedStreaming.cpp(196,52): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          ignoreEnd = inireader.ReadInteger(range.data(), "IgnoreEnd", -1);
+                                                                          ^
+SAMImprovedStreaming.cpp(197,53): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          biggerThan = inireader.ReadInteger(range.data(), "IfBiggerThan", -1);
+                                                                           ^
+SAMImprovedStreaming.cpp(198,54): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          smallerThan = inireader.ReadInteger(range.data(), "IfSmallerThan", -1);
+                                                                            ^
+SAMImprovedStreaming.cpp(199,57): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          ignorePedGroup = inireader.ReadInteger(range.data(), "IgnorePedGroup", -1) - 1;
+                                                                               ^
+SAMImprovedStreaming.cpp(200,53): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          keepLoaded = inireader.ReadBoolean(range.data(), "KeepLoaded", 0) == true;
+                                                                           ^
+SAMImprovedStreaming.cpp(205,44): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                          if (inireader.ReadBoolean(range.data(), "Enabled", 0) != 1) continue;
+                                                                  ^
+SAMImprovedStreaming.cpp(318,36): warning : expression result unused [-Wunused-value]
+                                          removeUnusedIntervalMsTweaked / 2;
+                                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^ ~
+SAMImprovedStreaming.cpp(334,38): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+          preLoadLODs = inireader.ReadInteger("Settings", "PreLoadLODs", 0) == 1;
+                                              ^
+SAMImprovedStreaming.cpp(334,50): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+          preLoadLODs = inireader.ReadInteger("Settings", "PreLoadLODs", 0) == 1;
+                                                          ^
+SAMImprovedStreaming.cpp(335,39): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+          preLoadAnims = inireader.ReadInteger("Settings", "PreLoadAnims", 0) == 1;
+                                               ^
+SAMImprovedStreaming.cpp(335,51): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+          preLoadAnims = inireader.ReadInteger("Settings", "PreLoadAnims", 0) == 1;
+                                                           ^
+SAMImprovedStreaming.cpp(336,34): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+          logMode = inireader.ReadInteger("Settings", "LogMode", -1);
+                                          ^
+SAMImprovedStreaming.cpp(336,46): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+          logMode = inireader.ReadInteger("Settings", "LogMode", -1);
+                                                      ^
+SAMImprovedStreaming.cpp(350,34): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                  FLAFix = inireader.ReadBoolean("SPECIAL", "Disable CINFO.BIN and MINFO.BIN loading", 0);
+                                                 ^
+SAMImprovedStreaming.cpp(350,45): warning : ISO C++11 does not allow conversion from string literal to 'char *' [-Wwritable-strings]
+                  FLAFix = inireader.ReadBoolean("SPECIAL", "Disable CINFO.BIN and MINFO.BIN loading", 0);
+                                                            ^
+SAMImprovedStreaming.cpp(25,12): warning : unused variable 'totalBinaryIPLconfig' [-Wunused-variable]
+  static int totalBinaryIPLconfig = 0;
+             ^
+SAMImprovedStreaming.cpp(26,12): warning : unused variable 'totalBinaryIPLloaded' [-Wunused-variable]
+  static int totalBinaryIPLloaded = 0;
+             ^
+  In file included from SAMImprovedStreaming.cpp:5:
+  In file included from H:\新建文件夹1\GTA Android Plugin\GTASA/CStreaming.h:2:
+H:\新建文件夹1\GTA Android Plugin\GTASA/CStreamingInfo.h(22,8): warning : private field '__pad' is not used [-Wunused-private-field]
+          char  __pad[3];
+                ^
+  '+soft-float-abi' is not a recognized feature for this target (ignoring feature)
+  '+soft-float-abi' is not a recognized feature for this target (ignoring feature)
+  34 warnings generated.
+  SAMImprovedStreaming.vcxproj -> H:\新建文件夹1\SAMImprovedStreaming\ARM\Release\libSAMImprovedStreaming.so

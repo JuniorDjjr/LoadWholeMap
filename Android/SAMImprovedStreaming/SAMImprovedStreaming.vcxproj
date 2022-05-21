@@ -62,7 +62,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>Clang_5_0</PlatformToolset>
-    <AndroidAPILevel>android-23</AndroidAPILevel>
+    <AndroidAPILevel>android-27</AndroidAPILevel>
     <UseOfStl>c++_static</UseOfStl>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -152,46 +152,29 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <PreprocessorDefinitions>ANDROID;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <CLanguageStandard>c11</CLanguageStandard>
       <CppLanguageStandard>c++1z</CppLanguageStandard>
       <PositionIndependentCode>false</PositionIndependentCode>
+      <AdditionalIncludeDirectories>H:\新建文件夹1\GTA Android Plugin;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AML\logger.cpp" />
-    <ClCompile Include="ARMHook\CHook.cpp" />
-    <ClCompile Include="ARMHook\CPatch.cpp" />
-    <ClCompile Include="ARMHook\Substrate\hde64.c" />
-    <ClCompile Include="ARMHook\Substrate\SubstrateDebug.cpp" />
-    <ClCompile Include="ARMHook\Substrate\SubstrateHook.cpp" />
-    <ClCompile Include="ARMHook\Substrate\SubstratePosixMemory.cpp" />
-    <ClCompile Include="ini\inireader.c" />
-    <ClCompile Include="ini\minIni.c" />
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\CHook.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\CPatch.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateDebug.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\Substrate\SubstratePosixMemory.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\GTASA\CAnimManager.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\GTASA\CStreaming.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\GTASA\CTimer.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\library.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\shared\ini\inireader.c" />
+    <ClCompile Include="..\..\GTA Android Plugin\shared\ini\minIni.c" />
     <ClCompile Include="SAMImprovedStreaming.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AML\amlmod.h" />
-    <ClInclude Include="AML\iaml.h" />
-    <ClInclude Include="AML\interface.h" />
-    <ClInclude Include="AML\logger.h" />
-    <ClInclude Include="ARMHook\Call.h" />
-    <ClInclude Include="ARMHook\CHook.h" />
-    <ClInclude Include="ARMHook\CPatch.h" />
-    <ClInclude Include="ARMHook\Substrate\Buffer.hpp" />
-    <ClInclude Include="ARMHook\Substrate\CydiaSubstrate.h" />
-    <ClInclude Include="ARMHook\Substrate\hde64.h" />
-    <ClInclude Include="ARMHook\Substrate\SubstrateARM.hpp" />
-    <ClInclude Include="ARMHook\Substrate\SubstrateDebug.hpp" />
-    <ClInclude Include="ARMHook\Substrate\SubstrateHook.h" />
-    <ClInclude Include="ARMHook\Substrate\SubstrateLog.hpp" />
-    <ClInclude Include="ARMHook\Substrate\SubstrateX86.hpp" />
-    <ClInclude Include="ARMHook\Substrate\table64.h" />
-    <ClInclude Include="CLEO_SDK\cleo.h" />
-    <ClInclude Include="ini\inireader.h" />
-    <ClInclude Include="ini\minGlue.h" />
-    <ClInclude Include="ini\minIni.h" />
-    <ClInclude Include="SAMImprovedStreaming.h" />
+    <ClInclude Include="..\..\GTA Android Plugin\GTASA\CStreaming.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
