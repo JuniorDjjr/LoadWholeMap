@@ -2,112 +2,44 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="SAMImprovedStreaming.cpp" />
-    <ClCompile Include="ini\inireader.c">
-      <Filter>ini</Filter>
-    </ClCompile>
-    <ClCompile Include="ini\minIni.c">
-      <Filter>ini</Filter>
-    </ClCompile>
-    <ClCompile Include="ARMHook\Substrate\hde64.c">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClCompile>
-    <ClCompile Include="ARMHook\Substrate\SubstrateDebug.cpp">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClCompile>
-    <ClCompile Include="ARMHook\Substrate\SubstrateHook.cpp">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClCompile>
-    <ClCompile Include="ARMHook\Substrate\SubstratePosixMemory.cpp">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClCompile>
-    <ClCompile Include="AML\logger.cpp">
-      <Filter>AML</Filter>
-    </ClCompile>
-    <ClCompile Include="ARMHook\CHook.cpp">
+    <ClCompile Include="..\..\GTA Android Plugin\GTASA\CAnimManager.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\GTASA\CTimer.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\CHook.cpp">
       <Filter>ARMHook</Filter>
     </ClCompile>
-    <ClCompile Include="ARMHook\CPatch.cpp">
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\CPatch.cpp">
       <Filter>ARMHook</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateDebug.cpp">
+      <Filter>ARMHook\Substrate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\Substrate\SubstrateHook.cpp">
+      <Filter>ARMHook\Substrate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GTA Android Plugin\ARMHook\Substrate\SubstratePosixMemory.cpp">
+      <Filter>ARMHook\Substrate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GTA Android Plugin\library.cpp" />
+    <ClCompile Include="..\..\GTA Android Plugin\shared\ini\inireader.c">
+      <Filter>ini</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GTA Android Plugin\shared\ini\minIni.c">
+      <Filter>ini</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\GTA Android Plugin\GTASA\CStreaming.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CLEO_SDK\cleo.h">
-      <Filter>cleo_sdk</Filter>
-    </ClInclude>
-    <ClInclude Include="ini\inireader.h">
-      <Filter>ini</Filter>
-    </ClInclude>
-    <ClInclude Include="ini\minGlue.h">
-      <Filter>ini</Filter>
-    </ClInclude>
-    <ClInclude Include="ini\minIni.h">
-      <Filter>ini</Filter>
-    </ClInclude>
-    <ClInclude Include="SAMImprovedStreaming.h" />
-    <ClInclude Include="ARMHook\Substrate\Buffer.hpp">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Substrate\CydiaSubstrate.h">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Substrate\hde64.h">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Substrate\SubstrateARM.hpp">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Substrate\SubstrateDebug.hpp">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Substrate\SubstrateHook.h">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Substrate\SubstrateLog.hpp">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Substrate\SubstrateX86.hpp">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Substrate\table64.h">
-      <Filter>ARMHook\Substrate</Filter>
-    </ClInclude>
-    <ClInclude Include="AML\amlmod.h">
-      <Filter>AML</Filter>
-    </ClInclude>
-    <ClInclude Include="AML\iaml.h">
-      <Filter>AML</Filter>
-    </ClInclude>
-    <ClInclude Include="AML\interface.h">
-      <Filter>AML</Filter>
-    </ClInclude>
-    <ClInclude Include="AML\logger.h">
-      <Filter>AML</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\Call.h">
-      <Filter>ARMHook</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\CHook.h">
-      <Filter>ARMHook</Filter>
-    </ClInclude>
-    <ClInclude Include="ARMHook\CPatch.h">
-      <Filter>ARMHook</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Filter Include="cleo_sdk">
-      <UniqueIdentifier>{d0a0d986-975f-427f-8559-d63ac9966b90}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ARMHook">
-      <UniqueIdentifier>{28616190-6e82-4280-a07e-88f049037837}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ini">
-      <UniqueIdentifier>{197e3991-c53e-41c2-9b38-cd857a806990}</UniqueIdentifier>
+      <UniqueIdentifier>{d609b37d-a8d7-4f33-9efa-493a31cd0c4f}</UniqueIdentifier>
     </Filter>
     <Filter Include="ARMHook\Substrate">
-      <UniqueIdentifier>{398f57eb-b9cd-4caf-8346-7e66966ec1f4}</UniqueIdentifier>
+      <UniqueIdentifier>{a3425dd0-202a-41e8-8abb-4b759d0d5b9e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="AML">
-      <UniqueIdentifier>{76f0bc7f-7bce-4dfc-89aa-25d70cf00595}</UniqueIdentifier>
+    <Filter Include="ini">
+      <UniqueIdentifier>{4445e281-443b-4680-b6a6-6ca758c44fd8}</UniqueIdentifier>
     </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\GTA Android Plugin\GTASA\CStreaming.h" />
   </ItemGroup>
 </Project>
