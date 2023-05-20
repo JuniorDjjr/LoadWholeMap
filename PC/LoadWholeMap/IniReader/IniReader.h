@@ -1,5 +1,6 @@
 #ifndef INIREADER_H
 #define INIREADER_H
+
 #include "ini_parser.hpp"
 #include <string>
 #include <string_view>
@@ -8,8 +9,6 @@
 /*
 *  String comparision functions, with case sensitive option
 */
-
-using std::strcmp;
 
 inline int strcmp(const char* str1, const char* str2, bool csensitive)
 {
@@ -101,14 +100,14 @@ public:
         data.load_file(ini_mem);
     }
 
-    bool operator==(CIniReader& ir)
+    bool operator==(const CIniReader& ir) const
     {
         if (data.size() != ir.data.size())
             return false;
 
-        for (auto& section : data)
+        for (const auto& section : data)
         {
-            for (auto& key : data.at(section.first))
+            for (const auto& key : data.at(section.first))
             {
                 if (key.second != ir.data.at(section.first)[key.first])
                     return false;
@@ -117,17 +116,17 @@ public:
         return true;
     }
 
-    bool operator!=(CIniReader& ir)
+    bool operator!=(const CIniReader& ir) const
     {
         return !(*this == ir);
     }
 
-    bool CompareBySections(CIniReader& ir)
+    bool CompareBySections(const CIniReader& ir) const
     {
         if (data.size() != ir.data.size())
             return false;
 
-        for (auto& section : data)
+        for (const auto& section : data)
         {
             if (ir.data.find(section.first) == ir.data.end())
                 return false;
@@ -141,12 +140,12 @@ public:
         return true;
     }
 
-    bool CompareByValues(CIniReader& ir)
+    bool CompareByValues(const CIniReader& ir) const
     {
         return *this == ir;
     }
 
-    const std::string& GetIniPath()
+    const std::string& GetIniPath() const
     {
         return m_szFileName;
     }
@@ -180,18 +179,18 @@ public:
         data.load_file(m_szFileName);
     }
 
-    int ReadInteger(std::string_view szSection, std::string_view szKey, int iDefaultValue)
+    int ReadInteger(std::string_view szSection, std::string_view szKey, int iDefaultValue) const
     {
         auto str = data.get(szSection.data(), szKey.data(), std::to_string(iDefaultValue));
         return std::stoi(str, nullptr, starts_with(str.c_str(), "0x", false) ? 16 : 10);
     }
 
-    float ReadFloat(std::string_view szSection, std::string_view szKey, float fltDefaultValue)
+    float ReadFloat(std::string_view szSection, std::string_view szKey, float fltDefaultValue) const
     {
-        return (float)atof(data.get(szSection.data(), szKey.data(), std::to_string(fltDefaultValue)).c_str());
+        return std::stof(data.get(szSection.data(), szKey.data(), std::to_string(fltDefaultValue)));
     }
 
-    bool ReadBoolean(std::string_view szSection, std::string_view szKey, bool bolDefaultValue)
+    bool ReadBoolean(std::string_view szSection, std::string_view szKey, bool bolDefaultValue) const
     {
         auto val = data.get(szSection.data(), szKey.data(), "");
         if (!val.empty())
@@ -204,7 +203,7 @@ public:
         return bolDefaultValue;
     }
 
-    std::string ReadString(std::string_view szSection, std::string_view szKey, std::string_view szDefaultValue)
+    std::string ReadString(std::string_view szSection, std::string_view szKey, std::string_view szDefaultValue) const
     {
         auto s = data.get(szSection.data(), szKey.data(), szDefaultValue.data());
 
@@ -279,4 +278,4 @@ public:
     }
 };
 
-#endif //INIREADER_H
+#endif // INIREADER_H
