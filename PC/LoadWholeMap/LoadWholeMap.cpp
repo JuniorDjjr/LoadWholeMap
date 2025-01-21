@@ -357,7 +357,7 @@ public:
 						// If memory usage is near limit, decrease the remove interval
 						int removeUnusedIntervalMsTweaked = removeUnusedIntervalMs;
 						if (memUsedPercent > 95.0f && removeUnusedIntervalMsTweaked > 0) {
-							removeUnusedIntervalMsTweaked / 2;
+							removeUnusedIntervalMsTweaked /= 2;
 						}
 						if ((CTimer::m_snTimeInMilliseconds - lastTimeRemoveUnused) > removeUnusedIntervalMsTweaked) {
 							//CStreaming::RemoveAllUnusedModels();
